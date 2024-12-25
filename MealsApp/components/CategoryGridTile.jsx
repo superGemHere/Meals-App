@@ -1,7 +1,7 @@
 import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
 import React from "react";
 
-const CategoryGridTile = ({ title, color }) => {
+const CategoryGridTile = ({ title, color, onPress }) => {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -10,8 +10,9 @@ const CategoryGridTile = ({ title, color }) => {
           styles.button,
           pressed ? styles.buttonPressed : null
         ]}
+        onPress={onPress}
       >
-        <View style={[styles.innerContainer, {backgroundColor: color}]}>
+        <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>
             {title}
           </Text>
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 16,
     height: 150,
-    borderWidth: .2,
+    borderWidth: 0.2,
     borderRadius: 8,
     elevation: 6,
     backgroundColor: "white",
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
-    overflow: Platform.OS === "android" ? "hidden" : "visible",
+    overflow: Platform.OS === "android" ? "hidden" : "visible"
   },
   button: {
     flex: 1
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   title: {
     fontSize: 18,
