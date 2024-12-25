@@ -8,6 +8,7 @@ const renderMealItem = (navigation, itemData) => {
   const item = itemData.item;
 
   const mealItemProps = {
+    id: item.id,
     title: item.title,
     imageUrl: item.imageUrl,
     duration: item.duration,
@@ -27,8 +28,10 @@ const MealsOverviewScreen = ({ navigation, route }) => {
 
   useLayoutEffect(
     () => {
-      const categoryTitle = CATEGORIES.find(category => category.id === categoryId).title;
-      
+      const categoryTitle = CATEGORIES.find(
+        category => category.id === categoryId
+      ).title;
+
       navigation.setOptions({ title: categoryTitle });
     },
     [navigation, categoryId]
