@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "white",
+    textShadowColor: "black",
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 2
   }
 });
